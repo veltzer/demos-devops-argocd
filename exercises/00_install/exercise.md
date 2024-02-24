@@ -11,10 +11,10 @@ kubectl create namespace argocd
 * Create all k8s object having to do with ArgoCD by pulling the yaml from the web and their images:
 
 ```shell
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-* Create a port forwarder
+* Patch ArgoCD to not have tls and allow access in port 30000 of the minikube ip:
 
 ```shell
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
