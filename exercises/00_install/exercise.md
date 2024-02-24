@@ -20,11 +20,15 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 ```
 
+* Access your ArgoCD at `http://localhost:8080`, don't worry about the certificate not being signed.
+
 * Use the `ingree.yaml` in this folder:
 
 ```shell
-kubectl apply -f ingree.yaml
+kubectl apply -f ingress.yaml
 ```
+
+* Access your ArgoCD at `http://localhost:8080`, don't worry about the certificate not being signed.
 
 * to get the admin password, user is `admin`
 
