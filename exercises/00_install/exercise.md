@@ -14,7 +14,7 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-* Patch ArgoCD to not have tls and allow access in port 30000 of the minikube ip:
+* Patch ArgoCD to not have TLS and allow access in port 30000 of the minikube ip:
 
 ```shell
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
