@@ -22,7 +22,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 
 * Access your ArgoCD at `http://localhost:8080`, don't worry about the certificate not being signed.
 
-* Use the `ingree.yaml` in this folder:
+* Use the `ingress.yaml` in this folder:
 
 ```shell
 kubectl apply -f ingress.yaml
