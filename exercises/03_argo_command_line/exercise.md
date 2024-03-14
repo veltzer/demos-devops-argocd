@@ -8,3 +8,5 @@
     * show all your apps
     * run sync remotely
     ...
+
+[link to the installation documentation](https://argo-cd.readthedocs.io/en/stable/cli_installation/)
