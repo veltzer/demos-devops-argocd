@@ -3,10 +3,10 @@
 ##########
 # do you want to see the commands executed ?
 DO_MKDBG:=0
-# do you want to check bash syntax?
-DO_SHELLCHECK:=1
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
+# do you want to check bash syntax?
+DO_SHELLCHECK:=1
 # do you want to check python syntax?
 DO_SYNTAX:=1
 # do you want to lint python files using pylit?
@@ -33,11 +33,6 @@ else # DO_MKDBG
 Q:=@
 #.SILENT:
 endif # DO_MKDBG
-
-# dependency on the makefile itself
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
 
 ALL_SH:=$(shell find . -type f -name "*.sh" -and -not -path "./.venv/*" -and -not -path "./config/*" -printf "%P\n")
 ALL_SHELLCHECK:=$(addprefix out/, $(addsuffix .shellcheck, $(ALL_SH)))
@@ -158,3 +153,10 @@ $(MD_MDL): out/%.mdl: %.md .mdlrc .mdl.style.rb
 	$(Q)GEM_HOME=gems gems/bin/mdl $<
 	$(Q)mkdir -p $(dir $@)
 	$(Q)touch $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP
