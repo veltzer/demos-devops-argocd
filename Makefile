@@ -151,8 +151,7 @@ $(ALL_MYPY): out/%.mypy: %.py
 $(MD_MDL): out/%.mdl: %.md .mdlrc .mdl.style.rb
 	$(info doing [$@])
 	$(Q)GEM_HOME=gems gems/bin/mdl $<
-	$(Q)mkdir -p $(dir $@)
-	$(Q)touch $@
+	$(Q)pymakehelper touch_mkdir $@
 
 ##########
 # alldep #
