@@ -1,12 +1,8 @@
 # THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
-pymakehelper
-pypitools
+mypy
 pycmdtools
-black
+pydmt
 pylint
+pymakehelper
 pytest
 pytest-cov
-flake8
-pyflakes
-mypy
-pydmt
