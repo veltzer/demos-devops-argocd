@@ -10,9 +10,6 @@
 # folders to git ignore
 /*.gi
 
-# gems
-/gems/
-
 # hive
 derby.log
 dfs/
