@@ -1,5 +1,5 @@
 apiVersion: networking.k8s.io/v1
-kind: Ingress 
+kind: Ingress
 metadata:
   name: argocd-server-ingress
 spec:
@@ -11,5 +11,5 @@ spec:
         backend:
           service:
             name: argocd-server
-            port: 
+            port:
               number: 80

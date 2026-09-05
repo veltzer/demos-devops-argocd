@@ -4,13 +4,13 @@
 
 [processor.rumdl]
 src_dirs = ["exercises"]
+src_files = ["README.md"]
 
 [processor.zspell]
 src_dirs = ["exercises"]
 
 [processor.shellcheck]
 src_dirs = ["exercises", "config"]
-args = ["--severity=error", "--shell=bash"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
@@ -25,3 +25,8 @@ src_dirs = ["."]
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── yaml ────────────────────────────────────────────────────────────────────
+
+[processor.yamllint]
+src_dirs = ["exercises"]
