@@ -10,12 +10,7 @@ src_files = ["README.md"]
 src_dirs = ["exercises"]
 
 [processor.shellcheck]
-src_dirs = ["exercises", "config"]
-
-# ─── lua ─────────────────────────────────────────────────────────────────────
-
-[processor.luacheck]
-src_dirs = ["config"]
+src_dirs = ["exercises"]
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
