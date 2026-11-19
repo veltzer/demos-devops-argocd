@@ -11,7 +11,6 @@ Findings from a code scan on 2026-10-04.
 
 - `exercises/00_install/exercise.md:19` - the bullet says "Patch ArgoCD to not have TLS and allow access in port 30000", but the command under it (`:22`) is a `kubectl port-forward ... 8080:443`, and `:31` then says to open `http://localhost:8080` while also warning about an unsigned certificate. The patch it describes is `patch.sh`; either reference `patch.sh` + `open.sh` (NodePort 30000, `--insecure`) here, or reword the bullet to describe the port-forward and use `https://localhost:8080`.
 - `exercises/00_install/get.sh:3` - fetches `https://<minikube-ip>:80/`: HTTPS on port 80, a port that `patch.sh` does not expose (it maps the service to NodePort 30000 and runs the server `--insecure`). Use `http://$(minikube ip):30000/` like `open.sh:2`, and drop the duplicated commented-out line `:4`.
-- `rsconstruct.toml` - `config/project.lua` is never linted although the repo carries the fleet `.luacheckrc` for exactly that file; 109 fleet repos have `[processor.luacheck]` with `src_dirs = ["config"]`. Add it (and declare nothing else - luacheck comes from the rsconstruct tool registry).
 
 ## Low
 
