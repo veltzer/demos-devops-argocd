@@ -43,4 +43,5 @@ kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/s
 ```
 
 ## Links
+
 * [Getting Started with ArgoCD](https://argo-cd.readthedocs.io/en/stable/getting_started)
