@@ -1,2 +1,3 @@
 #!/bin/bash -e
-xdg-open "http://$(minikube ip):30000/"
+minikube_ip=$(minikube ip)
+xdg-open "http://${minikube_ip}:30000/"
